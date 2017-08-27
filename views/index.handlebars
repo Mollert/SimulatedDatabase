@@ -1,0 +1,89 @@
+
+<div class="container">
+	<div class="row">
+		<div class="project">
+			<div class="titleTextOnly">Available Projects</div>
+			<div class="adderText">
+				{{#each fakeProjects}}
+					<ul>
+						<li>
+							<img src="{{this.image_link}}" alt="Image Pic" style="width:300px;height:150px;">
+							<p>Project Title: {{this.project_title}}</p>
+							<p>This project is funded at ${{this.funding}}</p>	
+						</li>
+					</ul>
+				{{/each}}
+				<form id="getProjects" action="/projects" method="GET">
+					<input type="submit" class="btn btn-success btn-lg" value="Get Projects">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="amount">
+			<div class="titleText">Get the projects amount</div>
+			<div class="gettingAmount">			
+				<form id="projectAmount" action="/projectAmount" method="POST">
+					<div class="form-group">
+						<input type="text" class="form-control" id="project" name="project_title" placeholder="List project's name here">
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-success btn-lg" value="Get Project Amount">
+					</div>
+				</form>
+			</div>
+			<div class="adderText">The {{am}} project is funder at ${{amount}}</div>
+		</div>
+	</div>
+		<div class="row">
+		<div class="addAmount">
+			<div class="titleText">Contribute to a project</div>
+			<div class="contributeProject">			
+				<form id="contribute" action="/contribute" method="POST">
+					<div class="form-group">
+						<input type="text" class="form-control" id="giveProject" name="project_title" placeholder="List project's name here">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="giveAmount" name="funding" placeholder="List the amount you want to contribute here">
+					</div>					
+					<div class="form-group">
+						<input type="submit" id="newContro"class="btn btn-success btn-lg" value="Contribute">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="funders">
+			<div class="titleText">List of Funders</div>
+			<div class="adderText">
+				<ul>
+					{{#each fakeFunders}}
+						<li>
+							<p>Funders: {{this.funder}}</p>
+						</li>
+					{{/each}}
+				</ul>
+				<form id="getFunders" action="/funders" method="GET">
+					<input type="submit" class="btn btn-success btn-lg" value="Get Funders">
+				</form>				
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="afunder">
+			<div class="titleText">Add a Funder</div>
+			<div class="newFunder">			
+				<form id="addFunder" action="/addFunder" method="POST">
+					<div class="form-group">
+						<input type="text" class="form-control" id="funder" name="funder" placeholder="Add Funder's name here">
+					</div>
+					<div class="form-group">
+						<input type="submit" id="nwFunder" class="btn btn-success btn-lg" value="Add a New Funder">
+					</div>
+				</form>
+			</div>
+			<div class="adderText">The new funder is {{nm}}</div>
+		</div>
+	</div>
+</div>
