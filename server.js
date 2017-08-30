@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 
 var app = express();
 var router = express.Router();
-var port = 5500;
+var port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname ,"public")));

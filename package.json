@@ -1,7 +1,10 @@
 {
-  "name": "hashTagFund",
+  "name": "simulateddatabase",
   "version": "1.0.0",
   "description": "create crowd funding app tied to Instagram",
+  "engines": {
+    "node": "6.9.4"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "hashTagFund"
+    "url": "https://github.com/Mollert/SimulatedDatabase"
   },
   "author": "David Mollert",
   "license": "ISC",
